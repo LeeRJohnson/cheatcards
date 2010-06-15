@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://adactio.com/extras/pocketbooks/html5/ -->
+<HTML lang="en"><STYLE>div#csscan-wrapper, div#csscan-wrapper * {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  text-shadow: none !important;
+  border: 0 !important;
+  color: #07B7EC !important;
+}
+
+div#csscan-wrapper {
+  border: 1px solid #07B7EC !important;
+  background: #00272C !important;
+  position: fixed !important;
+  top: 15px;
+  right: 15px;
+  width: 330px !important;
+  height: auto !important;
+  z-index: 38000 !important;
+  -webkit-box-shadow: 0 0 5px #999 !important;
+  -webkit-border-radius: 5px !important;
+  padding: 10px !important;
+  overflow: hidden !important;
+}
+
+div#csscan-wrapper table#csscan-table {
+  background: #00272C !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+}
+
+div#csscan-wrapper table#csscan-table th {
+  background: #00272C !important;
+}
+
+div#csscan-wrapper table#csscan-table td, div#csscan-wrapper table#csscan-table th {
+  font-size: 12px !important;
+  vertical-align: top !important;
+  font-family: 'Segoe UI', Calibri, Helvetica, Arial, sans-serif !important;
+}
+
+div#csscan-wrapper table#csscan-table th {
+  font-size: 14px !important;
+  padding-top: 0.5em !important;
+  text-align: left !important;
+}
+
+div#csscan-wrapper td.csscan-property {
+  width: 30% !important;
+  text-align: right !important;
+  font-weight: bold !important;
+  padding: 1px !important;
+}
+
+div#csscan-wrapper td.csscan-value {
+  width: 70% !important;
+  text-align: left !important;
+  font-weight: normal !important;
+  padding: 1px 1px 1px 1em !important;
+}
+
+div#csscan-wrapper h2#csscan-header {
+  font-family: 'Segoe UI', Calibri, Helvetica, Arial, sans-serif !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  color: #00272C !important;
+  background: #07B7EC !important;
+  text-align: center !important;
+  height: 21px !important;
+  width: 100% !important;
+}
+
+div#csscan-wrapper h2#csscan-header, div#csscan-wrapper table {
+  width: 100% !important;
+}
+
+div#csscan-wrapper dl dd, div#csscan-wrapper dl dt {
+  width: 50% !important;
+  text-align: left !important;
+}
+
+div#csscan-wrapper dl dt {
+  float: left !important;
+  font-weight: bold !important;
+}
+
+div#csscan-wrapper dl dd {
+  float: right !important;
+}
+
+div#csscan-wrapper span.csscan-color {
+  border: 1px solid #07B7EC !important;
+  width: 1ex !important;
+  height: 1ex !important;
+  display: inline-block !important;
+}
+
+.csscan-highlight {
+  outline: 2px dashed #FF0100 !important;
+}</STYLE><STYLE>#json_inspector_infobar,
+#json_inspector {
+    font-family: helvetica, arial, sans-serif;
+    font-size: small;
+    border: 0;
+    margin: 20px;
+}
+#json_inspector span.comma, #json_inspector .separator, #json_inspector .null {
+    color: #999;
+}
+#json_inspector td { vertical-align: top; }
+#json_inspector td.key { text-align: right; }
+#json_inspector .separator {
+    padding: 0 5px;
+}
+#json_inspector .key { color: #333; }
+#json_inspector .string { color: green; }
+#json_inspector .number { color: red; }
+#json_inspector .boolean { color: orange; }
+#json_inspector .null { font-style: italic; }
+#json_inspector tr { 
+    padding: 0; 
+    margin: 3px; 
+    list-style-type: none;
+}
+#json_inspector div {
+    position: relative;
+}
+#json_inspector div.visible {
+    background: #fff;
+    border: 1px solid #ddd; 
+    border-color: #ddd #d1d1d1 #d1d1d1 #ddd;
+    padding: 5px 35px 5px 10px;
+    margin: 0px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: #EDE 5px 5px 15px;
+}
+#json_inspector > div.visible {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+body.json_inspector_body {
+    background: #ededed;
+    margin: 0;
+}
+#json_inspector div.hidden { border: 0; }
+#json_inspector table { 
+    background: #fff;
+    font-size: 12px;
+}
+#json_inspector_infobar a,
+#json_inspector a { color: blue; font-size: small;}
+#json_inspector .collapsed {
+    font-size: small;
+    color: #666;
+    text-decoration: none;
+}
+#json_inspector .showlink:hover { text-decoration: underline; }
+#json_inspector .visible > .collapsed,
+#json_inspector .hidden > table,
+#json_inspector .visible > .showlink,
+#json_inspector .hidden > .hidelink { 
+    display: none; 
+}
+#json_inspector .hidden > .collapsed, 
+#json_inspector .hidden > .showlink,
+#json_inspector .visible > .hidelink {
+    display: inline; 
+}
+#json_inspector .hidelink { 
+    font-size: 12px;
+    position: absolute; 
+    right: 5px; 
+    top: 3px; 
+}
+#json_inspector .visible > table { display: block; }
+#json_inspector div.error {
+    padding: 20px;
+}
+#json_inspector div.error strong, 
+#json_inspector div.error strong a {
+    font-size: 20px;
+}
+#json_inspector_infobar {
+    background: #FDFF4F;
+    border-bottom: 1px solid orange;
+    color: #ddd;
+    margin: 0;
+    padding: 0 10px;
+    -webkit-box-shadow: 0px 1px 10px orange;
+}
+#json_inspector_infobar textarea {
+    display: none;
+    height: 100px;
+    margin: 10px 0;
+    width: 100%;
+}
+#json_inspector_infobar .turn_off_copy,
+#json_inspector_infobar.copy_on .turn_on_copy {
+    display: none;
+}
+#json_inspector_infobar.copy_on .turn_off_copy {
+    display: inline;
+}
+#json_inspector_infobar.copy_on textarea {
+    display: block;
+}
+#json_inspector_infobar table {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1px;
+    width: 100%;
+}
+#json_inspector_infobar table a {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 15px;
+}
+#json_inspector_infobar #infobar_controls {
+    text-align: right;
+}
+#json_inspector_infobar #json_inspector_logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    -webkit-text-stroke: 2px orange;
+}
+#json_inspector_infobar table span { font-weight: normal; font-size: 10px; }
+#json_inspector_infobar td { color: #333; }
+#json_inspector div.error textarea {
+    height: 400px;
+    width: 100%;
+    margin: 10px 0;
+}
+#json_inspector .json_inspector_timing {
+    color: #999;
+    margin-left: 10px;
+}
+</STYLE><STYLE>.yagbe_ac_results {
+	padding: 0px !important;
+	border: 1px solid black !important;
+	background-color: white !important;
+	color: black !important;
+	text-align: left !important;
+	overflow: hidden !important;
+	z-index: 99999 !important;
+}
+
+.yagbe_ac_results ul {
+	width: 100% !important;
+	list-style-position: outside !important;
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.yagbe_ac_results li {
+	margin: 0px !important;
+	padding: 2px 5px !important;
+	cursor: default !important;
+	display: block !important;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100% !important;*/
+	font: menu !important;
+	font-size: 12px !important;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px !important;
+	overflow: hidden !important;
+}
+
+.yagbe_ac_loading {
+	background: white url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/indicator.gif) right center no-repeat !important;
+}
+
+.yagbe_ac_over {
+	background-color: #deedf7 !important;
+}
+</STYLE><STYLE>.yagbe_ui-helper-hidden{display:none;}.yagbe_ui-helper-hidden-accessible{position:absolute;left:-99999999px;}.yagbe_ui-helper-reset{margin:0;padding:0;border:0;outline:0;line-height:1.3;text-decoration:none;font-size:100%;list-style:none;}.yagbe_ui-helper-clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}.yagbe_ui-helper-clearfix{display:inline-block;}/* required comment for clearfix to work in Opera \*/ * html .yagbe_ui-helper-clearfix{height:1%;}.yagbe_ui-helper-clearfix{display:block;}/* end clearfix */ .yagbe_ui-helper-zfix{width:100%;height:100%;top:0;left:0;position:absolute;opacity:0;filter:Alpha(Opacity=0);}.yagbe_ui-state-disabled{cursor:default!important;}.yagbe_ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat;}.yagbe_ui-widget-overlay{position:absolute;top:0;left:0;width:100%;height:100%;}.yagbe_ui-widget-content{border:1px solid #ddd;background:#f2f5f7 url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png) 50% top repeat-x;color:#362b36;}.yagbe_ui-widget-content a{color:#362b36;}.yagbe_ui-widget-header{border:1px solid #aed0ea;background:#deedf7 url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_highlight-soft_100_deedf7_1x100.png) 50% 50% repeat-x;color:#222;font-weight:bold;}.yagbe_ui-widget-header a{color:#222;}.yagbe_ui-state-default,.yagbe_ui-widget-content .yagbe_ui-state-default{border:1px solid #aed0ea;background:#d7ebf9 url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x;font-weight:bold;color:#2779aa;outline:none;}.yagbe_ui-state-default a,.yagbe_ui-state-default a:link,.yagbe_ui-state-default a:visited{color:#2779aa;text-decoration:none;outline:none;}.yagbe_ui-state-hover,.yagbe_ui-widget-content .yagbe_ui-state-hover,.yagbe_ui-state-focus,.yagbe_ui-widget-content .yagbe_ui-state-focus{border:1px solid #74b2e2;background:#e4f1fb url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_glass_100_e4f1fb_1x400.png) 50% 50% repeat-x;font-weight:bold;color:#0070a3;outline:none;}.yagbe_ui-state-hover a,.yagbe_ui-state-hover a:hover{color:#0070a3;text-decoration:none;outline:none;}.yagbe_ui-state-active,.yagbe_ui-widget-content .yagbe_ui-state-active{border:1px solid #2694e8;background:#3baae3 url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_glass_50_3baae3_1x400.png) 50% 50% repeat-x;font-weight:bold;color:#fff;outline:none;}.yagbe_ui-state-active a,.yagbe_ui-state-active a:link,.yagbe_ui-state-active a:visited{color:#fff;outline:none;text-decoration:none;}.yagbe_ui-state-highlight,.yagbe_ui-widget-content .yagbe_ui-state-highlight{border:1px solid #f9dd34;background:#ffef8f url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_highlight-soft_25_ffef8f_1x100.png) 50% top repeat-x;color:#363636;}.yagbe_ui-state-highlight a,.yagbe_ui-widget-content .yagbe_ui-state-highlight a{color:#363636;}.yagbe_ui-state-error,.yagbe_ui-widget-content .yagbe_ui-state-error{border:1px solid #cd0a0a;background:#cd0a0a url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_flat_15_cd0a0a_40x100.png) 50% 50% repeat-x;color:#fff;}.yagbe_ui-state-error a,.yagbe_ui-widget-content .yagbe_ui-state-error a{color:#fff;}.yagbe_ui-state-error-text,.yagbe_ui-widget-content .yagbe_ui-state-error-text{color:#fff;}.yagbe_ui-state-disabled,.yagbe_ui-widget-content .yagbe_ui-state-disabled{opacity:.35;filter:Alpha(Opacity=35);background-image:none;}.yagbe_ui-priority-primary,.yagbe_ui-widget-content .yagbe_ui-priority-primary{font-weight:bold;}.yagbe_ui-priority-secondary,.yagbe_ui-widget-content .yagbe_ui-priority-secondary{opacity:.7;filter:Alpha(Opacity=70);font-weight:normal;}.yagbe_ui-icon{width:16px;height:16px;background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_72a7cf_256x240.png);}.yagbe_ui-widget-content .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_72a7cf_256x240.png);}.yagbe_ui-widget-header .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_72a7cf_256x240.png);}.yagbe_ui-state-default .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_3d80b3_256x240.png);}.yagbe_ui-state-hover .yagbe_ui-icon,.yagbe_ui-state-focus .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_2694e8_256x240.png);}.yagbe_ui-state-active .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_ffffff_256x240.png);}.yagbe_ui-state-highlight .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_2e83ff_256x240.png);}.yagbe_ui-state-error .yagbe_ui-icon,.yagbe_ui-state-error-text .yagbe_ui-icon{background-image:url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-icons_ffffff_256x240.png);}.yagbe_ui-icon-carat-1-n{background-position:0 0;}.yagbe_ui-icon-carat-1-ne{background-position:-16px 0;}.yagbe_ui-icon-carat-1-e{background-position:-32px 0;}.yagbe_ui-icon-carat-1-se{background-position:-48px 0;}.yagbe_ui-icon-carat-1-s{background-position:-64px 0;}.yagbe_ui-icon-carat-1-sw{background-position:-80px 0;}.yagbe_ui-icon-carat-1-w{background-position:-96px 0;}.yagbe_ui-icon-carat-1-nw{background-position:-112px 0;}.yagbe_ui-icon-carat-2-n-s{background-position:-128px 0;}.yagbe_ui-icon-carat-2-e-w{background-position:-144px 0;}.yagbe_ui-icon-triangle-1-n{background-position:0 -16px;}.yagbe_ui-icon-triangle-1-ne{background-position:-16px -16px;}.yagbe_ui-icon-triangle-1-e{background-position:-32px -16px;}.yagbe_ui-icon-triangle-1-se{background-position:-48px -16px;}.yagbe_ui-icon-triangle-1-s{background-position:-64px -16px;}.yagbe_ui-icon-triangle-1-sw{background-position:-80px -16px;}.yagbe_ui-icon-triangle-1-w{background-position:-96px -16px;}.yagbe_ui-icon-triangle-1-nw{background-position:-112px -16px;}.yagbe_ui-icon-triangle-2-n-s{background-position:-128px -16px;}.yagbe_ui-icon-triangle-2-e-w{background-position:-144px -16px;}.yagbe_ui-icon-arrow-1-n{background-position:0 -32px;}.yagbe_ui-icon-arrow-1-ne{background-position:-16px -32px;}.yagbe_ui-icon-arrow-1-e{background-position:-32px -32px;}.yagbe_ui-icon-arrow-1-se{background-position:-48px -32px;}.yagbe_ui-icon-arrow-1-s{background-position:-64px -32px;}.yagbe_ui-icon-arrow-1-sw{background-position:-80px -32px;}.yagbe_ui-icon-arrow-1-w{background-position:-96px -32px;}.yagbe_ui-icon-arrow-1-nw{background-position:-112px -32px;}.yagbe_ui-icon-arrow-2-n-s{background-position:-128px -32px;}.yagbe_ui-icon-arrow-2-ne-sw{background-position:-144px -32px;}.yagbe_ui-icon-arrow-2-e-w{background-position:-160px -32px;}.yagbe_ui-icon-arrow-2-se-nw{background-position:-176px -32px;}.yagbe_ui-icon-arrowstop-1-n{background-position:-192px -32px;}.yagbe_ui-icon-arrowstop-1-e{background-position:-208px -32px;}.yagbe_ui-icon-arrowstop-1-s{background-position:-224px -32px;}.yagbe_ui-icon-arrowstop-1-w{background-position:-240px -32px;}.yagbe_ui-icon-arrowthick-1-n{background-position:0 -48px;}.yagbe_ui-icon-arrowthick-1-ne{background-position:-16px -48px;}.yagbe_ui-icon-arrowthick-1-e{background-position:-32px -48px;}.yagbe_ui-icon-arrowthick-1-se{background-position:-48px -48px;}.yagbe_ui-icon-arrowthick-1-s{background-position:-64px -48px;}.yagbe_ui-icon-arrowthick-1-sw{background-position:-80px -48px;}.yagbe_ui-icon-arrowthick-1-w{background-position:-96px -48px;}.yagbe_ui-icon-arrowthick-1-nw{background-position:-112px -48px;}.yagbe_ui-icon-arrowthick-2-n-s{background-position:-128px -48px;}.yagbe_ui-icon-arrowthick-2-ne-sw{background-position:-144px -48px;}.yagbe_ui-icon-arrowthick-2-e-w{background-position:-160px -48px;}.yagbe_ui-icon-arrowthick-2-se-nw{background-position:-176px -48px;}.yagbe_ui-icon-arrowthickstop-1-n{background-position:-192px -48px;}.yagbe_ui-icon-arrowthickstop-1-e{background-position:-208px -48px;}.yagbe_ui-icon-arrowthickstop-1-s{background-position:-224px -48px;}.yagbe_ui-icon-arrowthickstop-1-w{background-position:-240px -48px;}.yagbe_ui-icon-arrowreturnthick-1-w{background-position:0 -64px;}.yagbe_ui-icon-arrowreturnthick-1-n{background-position:-16px -64px;}.yagbe_ui-icon-arrowreturnthick-1-e{background-position:-32px -64px;}.yagbe_ui-icon-arrowreturnthick-1-s{background-position:-48px -64px;}.yagbe_ui-icon-arrowreturn-1-w{background-position:-64px -64px;}.yagbe_ui-icon-arrowreturn-1-n{background-position:-80px -64px;}.yagbe_ui-icon-arrowreturn-1-e{background-position:-96px -64px;}.yagbe_ui-icon-arrowreturn-1-s{background-position:-112px -64px;}.yagbe_ui-icon-arrowrefresh-1-w{background-position:-128px -64px;}.yagbe_ui-icon-arrowrefresh-1-n{background-position:-144px -64px;}.yagbe_ui-icon-arrowrefresh-1-e{background-position:-160px -64px;}.yagbe_ui-icon-arrowrefresh-1-s{background-position:-176px -64px;}.yagbe_ui-icon-arrow-4{background-position:0 -80px;}.yagbe_ui-icon-arrow-4-diag{background-position:-16px -80px;}.yagbe_ui-icon-extlink{background-position:-32px -80px;}.yagbe_ui-icon-newwin{background-position:-48px -80px;}.yagbe_ui-icon-refresh{background-position:-64px -80px;}.yagbe_ui-icon-shuffle{background-position:-80px -80px;}.yagbe_ui-icon-transfer-e-w{background-position:-96px -80px;}.yagbe_ui-icon-transferthick-e-w{background-position:-112px -80px;}.yagbe_ui-icon-folder-collapsed{background-position:0 -96px;}.yagbe_ui-icon-folder-open{background-position:-16px -96px;}.yagbe_ui-icon-document{background-position:-32px -96px;}.yagbe_ui-icon-document-b{background-position:-48px -96px;}.yagbe_ui-icon-note{background-position:-64px -96px;}.yagbe_ui-icon-mail-closed{background-position:-80px -96px;}.yagbe_ui-icon-mail-open{background-position:-96px -96px;}.yagbe_ui-icon-suitcase{background-position:-112px -96px;}.yagbe_ui-icon-comment{background-position:-128px -96px;}.yagbe_ui-icon-person{background-position:-144px -96px;}.yagbe_ui-icon-print{background-position:-160px -96px;}.yagbe_ui-icon-trash{background-position:-176px -96px;}.yagbe_ui-icon-locked{background-position:-192px -96px;}.yagbe_ui-icon-unlocked{background-position:-208px -96px;}.yagbe_ui-icon-bookmark{background-position:-224px -96px;}.yagbe_ui-icon-tag{background-position:-240px -96px;}.yagbe_ui-icon-home{background-position:0 -112px;}.yagbe_ui-icon-flag{background-position:-16px -112px;}.yagbe_ui-icon-calendar{background-position:-32px -112px;}.yagbe_ui-icon-cart{background-position:-48px -112px;}.yagbe_ui-icon-pencil{background-position:-64px -112px;}.yagbe_ui-icon-clock{background-position:-80px -112px;}.yagbe_ui-icon-disk{background-position:-96px -112px;}.yagbe_ui-icon-calculator{background-position:-112px -112px;}.yagbe_ui-icon-zoomin{background-position:-128px -112px;}.yagbe_ui-icon-zoomout{background-position:-144px -112px;}.yagbe_ui-icon-search{background-position:-160px -112px;}.yagbe_ui-icon-wrench{background-position:-176px -112px;}.yagbe_ui-icon-gear{background-position:-192px -112px;}.yagbe_ui-icon-heart{background-position:-208px -112px;}.yagbe_ui-icon-star{background-position:-224px -112px;}.yagbe_ui-icon-link{background-position:-240px -112px;}.yagbe_ui-icon-cancel{background-position:0 -128px;}.yagbe_ui-icon-plus{background-position:-16px -128px;}.yagbe_ui-icon-plusthick{background-position:-32px -128px;}.yagbe_ui-icon-minus{background-position:-48px -128px;}.yagbe_ui-icon-minusthick{background-position:-64px -128px;}.yagbe_ui-icon-close{background-position:-80px -128px;}.yagbe_ui-icon-closethick{background-position:-96px -128px;}.yagbe_ui-icon-key{background-position:-112px -128px;}.yagbe_ui-icon-lightbulb{background-position:-128px -128px;}.yagbe_ui-icon-scissors{background-position:-144px -128px;}.yagbe_ui-icon-clipboard{background-position:-160px -128px;}.yagbe_ui-icon-copy{background-position:-176px -128px;}.yagbe_ui-icon-contact{background-position:-192px -128px;}.yagbe_ui-icon-image{background-position:-208px -128px;}.yagbe_ui-icon-video{background-position:-224px -128px;}.yagbe_ui-icon-script{background-position:-240px -128px;}.yagbe_ui-icon-alert{background-position:0 -144px;}.yagbe_ui-icon-info{background-position:-16px -144px;}.yagbe_ui-icon-notice{background-position:-32px -144px;}.yagbe_ui-icon-help{background-position:-48px -144px;}.yagbe_ui-icon-check{background-position:-64px -144px;}.yagbe_ui-icon-bullet{background-position:-80px -144px;}.yagbe_ui-icon-radio-off{background-position:-96px -144px;}.yagbe_ui-icon-radio-on{background-position:-112px -144px;}.yagbe_ui-icon-pin-w{background-position:-128px -144px;}.yagbe_ui-icon-pin-s{background-position:-144px -144px;}.yagbe_ui-icon-play{background-position:0 -160px;}.yagbe_ui-icon-pause{background-position:-16px -160px;}.yagbe_ui-icon-seek-next{background-position:-32px -160px;}.yagbe_ui-icon-seek-prev{background-position:-48px -160px;}.yagbe_ui-icon-seek-end{background-position:-64px -160px;}.yagbe_ui-icon-seek-first{background-position:-80px -160px;}.yagbe_ui-icon-stop{background-position:-96px -160px;}.yagbe_ui-icon-eject{background-position:-112px -160px;}.yagbe_ui-icon-volume-off{background-position:-128px -160px;}.yagbe_ui-icon-volume-on{background-position:-144px -160px;}.yagbe_ui-icon-power{background-position:0 -176px;}.yagbe_ui-icon-signal-diag{background-position:-16px -176px;}.yagbe_ui-icon-signal{background-position:-32px -176px;}.yagbe_ui-icon-battery-0{background-position:-48px -176px;}.yagbe_ui-icon-battery-1{background-position:-64px -176px;}.yagbe_ui-icon-battery-2{background-position:-80px -176px;}.yagbe_ui-icon-battery-3{background-position:-96px -176px;}.yagbe_ui-icon-circle-plus{background-position:0 -192px;}.yagbe_ui-icon-circle-minus{background-position:-16px -192px;}.yagbe_ui-icon-circle-close{background-position:-32px -192px;}.yagbe_ui-icon-circle-triangle-e{background-position:-48px -192px;}.yagbe_ui-icon-circle-triangle-s{background-position:-64px -192px;}.yagbe_ui-icon-circle-triangle-w{background-position:-80px -192px;}.yagbe_ui-icon-circle-triangle-n{background-position:-96px -192px;}.yagbe_ui-icon-circle-arrow-e{background-position:-112px -192px;}.yagbe_ui-icon-circle-arrow-s{background-position:-128px -192px;}.yagbe_ui-icon-circle-arrow-w{background-position:-144px -192px;}.yagbe_ui-icon-circle-arrow-n{background-position:-160px -192px;}.yagbe_ui-icon-circle-zoomin{background-position:-176px -192px;}.yagbe_ui-icon-circle-zoomout{background-position:-192px -192px;}.yagbe_ui-icon-circle-check{background-position:-208px -192px;}.yagbe_ui-icon-circlesmall-plus{background-position:0 -208px;}.yagbe_ui-icon-circlesmall-minus{background-position:-16px -208px;}.yagbe_ui-icon-circlesmall-close{background-position:-32px -208px;}.yagbe_ui-icon-squaresmall-plus{background-position:-48px -208px;}.yagbe_ui-icon-squaresmall-minus{background-position:-64px -208px;}.yagbe_ui-icon-squaresmall-close{background-position:-80px -208px;}.yagbe_ui-icon-grip-dotted-vertical{background-position:0 -224px;}.yagbe_ui-icon-grip-dotted-horizontal{background-position:-16px -224px;}.yagbe_ui-icon-grip-solid-vertical{background-position:-32px -224px;}.yagbe_ui-icon-grip-solid-horizontal{background-position:-48px -224px;}.yagbe_ui-icon-gripsmall-diagonal-se{background-position:-64px -224px;}.yagbe_ui-icon-grip-diagonal-se{background-position:-80px -224px;}.yagbe_ui-corner-tl{-moz-border-radius-topleft:6px;-webkit-border-top-left-radius:6px;}.yagbe_ui-corner-tr{-moz-border-radius-topright:6px;-webkit-border-top-right-radius:6px;}.yagbe_ui-corner-bl{-moz-border-radius-bottomleft:6px;-webkit-border-bottom-left-radius:6px;}.yagbe_ui-corner-br{-moz-border-radius-bottomright:6px;-webkit-border-bottom-right-radius:6px;}.yagbe_ui-corner-top{-moz-border-radius-topleft:6px;-webkit-border-top-left-radius:6px;-moz-border-radius-topright:6px;-webkit-border-top-right-radius:6px;}.yagbe_ui-corner-bottom{-moz-border-radius-bottomleft:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomright:6px;-webkit-border-bottom-right-radius:6px;}.yagbe_ui-corner-right{-moz-border-radius-topright:6px;-webkit-border-top-right-radius:6px;-moz-border-radius-bottomright:6px;-webkit-border-bottom-right-radius:6px;}.yagbe_ui-corner-left{-moz-border-radius-topleft:6px;-webkit-border-top-left-radius:6px;-moz-border-radius-bottomleft:6px;-webkit-border-bottom-left-radius:6px;}.yagbe_ui-corner-all{-moz-border-radius:6px;-webkit-border-radius:6px;}.yagbe_ui-widget-overlay{background:#eee url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png) 50% 50% repeat;opacity:.80;filter:Alpha(Opacity=80);}.yagbe_ui-widget-shadow{margin:-7px 0 0 -7px;padding:7px;background:#000 url(chrome-extension://jdnejaepfmacfdmhkplckpfdcjgbeode/images/ui-bg_highlight-hard_70_000000_1x100.png) 50% top repeat-x;opacity:.30;filter:Alpha(Opacity=30);-moz-border-radius:8px;-webkit-border-radius:8px;}.yagbe_ui-accordion .yagbe_ui-accordion-header{cursor:pointer;position:relative;margin-top:1px;zoom:1;}.yagbe_ui-accordion .yagbe_ui-accordion-li-fix{display:inline;}.yagbe_ui-accordion .yagbe_ui-accordion-header-active{border-bottom:0!important;}.yagbe_ui-accordion .yagbe_ui-accordion-header a{display:block;font-size:1em;padding:.5em .5em .5em 2.2em;}.yagbe_ui-accordion .yagbe_ui-accordion-header .yagbe_ui-icon{position:absolute;left:.5em;top:50%;margin-top:-8px;}.yagbe_ui-accordion .yagbe_ui-accordion-content{padding:1em 2.2em;border-top:0;margin-top:-2px;position:relative;top:1px;margin-bottom:2px;overflow:auto;display:none;}.yagbe_ui-accordion .yagbe_ui-accordion-content-active{display:block;}.yagbe_ui-datepicker{width:17em;padding:.2em .2em 0;}.yagbe_ui-datepicker .yagbe_ui-datepicker-header{position:relative;padding:.2em 0;}.yagbe_ui-datepicker .yagbe_ui-datepicker-prev,.yagbe_ui-datepicker .yagbe_ui-datepicker-next{position:absolute;top:2px;width:1.8em;height:1.8em;}.yagbe_ui-datepicker .yagbe_ui-datepicker-prev-hover,.yagbe_ui-datepicker .yagbe_ui-datepicker-next-hover{top:1px;}.yagbe_ui-datepicker .yagbe_ui-datepicker-prev{left:2px;}.yagbe_ui-datepicker .yagbe_ui-datepicker-next{right:2px;}.yagbe_ui-datepicker .yagbe_ui-datepicker-prev-hover{left:1px;}.yagbe_ui-datepicker .yagbe_ui-datepicker-next-hover{right:1px;}.yagbe_ui-datepicker .yagbe_ui-datepicker-prev span,.yagbe_ui-datepicker .yagbe_ui-datepicker-next span{display:block;position:absolute;left:50%;margin-left:-8px;top:50%;margin-top:-8px;}.yagbe_ui-datepicker .yagbe_ui-datepicker-title{margin:0 2.3em;line-height:1.8em;text-align:center;}.yagbe_ui-datepicker .yagbe_ui-datepicker-title select{float:left;font-size:1em;margin:1px 0;}.yagbe_ui-datepicker select.yagbe_ui-datepicker-month-year{width:100%;}.yagbe_ui-datepicker select.yagbe_ui-datepicker-month,.yagbe_ui-datepicker select.yagbe_ui-datepicker-year{width:49%;}.yagbe_ui-datepicker .yagbe_ui-datepicker-title select.yagbe_ui-datepicker-year{float:right;}.yagbe_ui-datepicker table{width:100%;font-size:.9em;border-collapse:collapse;margin:0 0 .4em;}.yagbe_ui-datepicker th{padding:.7em .3em;text-align:center;font-weight:bold;border:0;}.yagbe_ui-datepicker td{border:0;padding:1px;}.yagbe_ui-datepicker td span,.yagbe_ui-datepicker td a{display:block;padding:.2em;text-align:right;text-decoration:none;}.yagbe_ui-datepicker .yagbe_ui-datepicker-buttonpane{background-image:none;margin:.7em 0 0 0;padding:0 .2em;border-left:0;border-right:0;border-bottom:0;}.yagbe_ui-datepicker .yagbe_ui-datepicker-buttonpane button{float:right;margin:.5em .2em .4em;cursor:pointer;padding:.2em .6em .3em .6em;width:auto;overflow:visible;}.yagbe_ui-datepicker .yagbe_ui-datepicker-buttonpane button.yagbe_ui-datepicker-current{float:left;}.yagbe_ui-datepicker.yagbe_ui-datepicker-multi{width:auto;}.yagbe_ui-datepicker-multi .yagbe_ui-datepicker-group{float:left;}.yagbe_ui-datepicker-multi .yagbe_ui-datepicker-group table{width:95%;margin:0 auto .4em;}.yagbe_ui-datepicker-multi-2 .yagbe_ui-datepicker-group{width:50%;}.yagbe_ui-datepicker-multi-3 .yagbe_ui-datepicker-group{width:33.3%;}.yagbe_ui-datepicker-multi-4 .yagbe_ui-datepicker-group{width:25%;}.yagbe_ui-datepicker-multi .yagbe_ui-datepicker-group-last .yagbe_ui-datepicker-header{border-left-width:0;}.yagbe_ui-datepicker-multi .yagbe_ui-datepicker-group-middle .yagbe_ui-datepicker-header{border-left-width:0;}.yagbe_ui-datepicker-multi .yagbe_ui-datepicker-buttonpane{clear:left;}.yagbe_ui-datepicker-row-break{clear:both;width:100%;}.yagbe_ui-datepicker-rtl{direction:rtl;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-prev{right:2px;left:auto;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-next{left:2px;right:auto;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-prev:hover{right:1px;left:auto;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-next:hover{left:1px;right:auto;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-buttonpane{clear:right;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-buttonpane button{float:left;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-buttonpane button.yagbe_ui-datepicker-current{float:right;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-group{float:right;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-group-last .yagbe_ui-datepicker-header{border-right-width:0;border-left-width:1px;}.yagbe_ui-datepicker-rtl .yagbe_ui-datepicker-group-middle .yagbe_ui-datepicker-header{border-right-width:0;border-left-width:1px;}.yagbe_ui-datepicker-cover{display:none;display:block;position:absolute;z-index:-1;filter:mask();top:-4px;left:-4px;width:200px;height:200px;}.yagbe_ui-dialog{position:relative;padding:.2em;width:300px;}.yagbe_ui-dialog .yagbe_ui-dialog-titlebar{padding:.5em .3em .3em 1em;position:relative;}.yagbe_ui-dialog .yagbe_ui-dialog-title{float:left;margin:.1em 0 .2em;}.yagbe_ui-dialog .yagbe_ui-dialog-titlebar-close{position:absolute;right:.3em;top:50%;width:19px;margin:-10px 0 0 0;padding:1px;height:18px;}.yagbe_ui-dialog .yagbe_ui-dialog-titlebar-close span{display:block;margin:1px;}.yagbe_ui-dialog .yagbe_ui-dialog-titlebar-close:hover,.yagbe_ui-dialog .yagbe_ui-dialog-titlebar-close:focus{padding:0;}.yagbe_ui-dialog .yagbe_ui-dialog-content{border:0;padding:.5em 1em;background:none;overflow:auto;zoom:1;}.yagbe_ui-dialog .yagbe_ui-dialog-buttonpane{text-align:right;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em;}.yagbe_ui-dialog .yagbe_ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer;padding:.2em .6em .3em .6em;line-height:1.4em;width:auto;overflow:visible;}.yagbe_ui-dialog .yagbe_ui-resizable-se{width:14px;height:14px;right:3px;bottom:3px;}.yagbe_ui-draggable .yagbe_ui-dialog-titlebar{cursor:move;}.yagbe_ui-progressbar{height:2em;text-align:left;}.yagbe_ui-progressbar .yagbe_ui-progressbar-value{margin:-1px;height:100%;}.yagbe_ui-resizable{position:relative;}.yagbe_ui-resizable-handle{position:absolute;font-size:.1px;z-index:99999;display:block;}.yagbe_ui-resizable-disabled .yagbe_ui-resizable-handle,.yagbe_ui-resizable-autohide .yagbe_ui-resizable-handle{display:none;}.yagbe_ui-resizable-n{cursor:n-resize;height:7px;width:100%;top:-5px;left:0;}.yagbe_ui-resizable-s{cursor:s-resize;height:7px;width:100%;bottom:-5px;left:0;}.yagbe_ui-resizable-e{cursor:e-resize;width:7px;right:-5px;top:0;height:100%;}.yagbe_ui-resizable-w{cursor:w-resize;width:7px;left:-5px;top:0;height:100%;}.yagbe_ui-resizable-se{cursor:se-resize;width:12px;height:12px;right:1px;bottom:1px;}.yagbe_ui-resizable-sw{cursor:sw-resize;width:9px;height:9px;left:-5px;bottom:-5px;}.yagbe_ui-resizable-nw{cursor:nw-resize;width:9px;height:9px;left:-5px;top:-5px;}.yagbe_ui-resizable-ne{cursor:ne-resize;width:9px;height:9px;right:-5px;top:-5px;}.yagbe_ui-slider{position:relative;text-align:left;}.yagbe_ui-slider .yagbe_ui-slider-handle{position:absolute;z-index:2;width:1.2em;height:1.2em;cursor:default;}.yagbe_ui-slider .yagbe_ui-slider-range{position:absolute;z-index:1;font-size:.7em;display:block;border:0;}.yagbe_ui-slider-horizontal{height:.8em;}.yagbe_ui-slider-horizontal .yagbe_ui-slider-handle{top:-.3em;margin-left:-.6em;}.yagbe_ui-slider-horizontal .yagbe_ui-slider-range{top:0;height:100%;}.yagbe_ui-slider-horizontal .yagbe_ui-slider-range-min{left:0;}.yagbe_ui-slider-horizontal .yagbe_ui-slider-range-max{right:0;}.yagbe_ui-slider-vertical{width:.8em;height:100px;}.yagbe_ui-slider-vertical .yagbe_ui-slider-handle{left:-.3em;margin-left:0;margin-bottom:-.6em;}.yagbe_ui-slider-vertical .yagbe_ui-slider-range{left:0;width:100%;}.yagbe_ui-slider-vertical .yagbe_ui-slider-range-min{bottom:0;}.yagbe_ui-slider-vertical .yagbe_ui-slider-range-max{top:0;}.yagbe_ui-tabs{padding:.2em;zoom:1;}.yagbe_ui-tabs .yagbe_ui-tabs-nav{list-style:none;position:relative;padding:.2em .2em 0;}.yagbe_ui-tabs .yagbe_ui-tabs-nav li{position:relative;float:left;border-bottom-width:0!important;margin:0 .2em -1px 0;padding:0;}.yagbe_ui-tabs .yagbe_ui-tabs-nav li a{float:left;text-decoration:none;padding:.5em 1em;}.yagbe_ui-tabs .yagbe_ui-tabs-nav li.yagbe_ui-tabs-selected{padding-bottom:1px;border-bottom-width:0;}.yagbe_ui-tabs .yagbe_ui-tabs-nav li.yagbe_ui-tabs-selected a,.yagbe_ui-tabs .yagbe_ui-tabs-nav li.yagbe_ui-state-disabled a,.yagbe_ui-tabs .yagbe_ui-tabs-nav li.yagbe_ui-state-processing a{cursor:text;}.yagbe_ui-tabs .yagbe_ui-tabs-nav li a,.yagbe_ui-tabs.yagbe_ui-tabs-collapsible .yagbe_ui-tabs-nav li.yagbe_ui-tabs-selected a{cursor:pointer;}.yagbe_ui-tabs .yagbe_ui-tabs-panel{padding:1em 1.4em;display:block;border-width:0;background:none;}.yagbe_ui-tabs .yagbe_ui-tabs-hide{display:none!important;}</STYLE><STYLE>body.delicious {
+	font: normal 12px arial, helvetica, arial, verdana;
+	color: #000;
+	overflow: hidden;
+	border: 0px;
+	}
+	.delicious div.toolstrip-button {
+		color: #000;
+		cursor: hand;
+		padding: 6px;
+		border-bottom: 1px solid #eee;
+		}
+	.delicious div.toolstrip-button {
+		color: #000;
+		cursor: hand;
+		font: normal 12px helvetica, arial, verdana;
+		width: 150px;
+		padding: 6px;
+		border-bottom: 1px solid #eee;
+		}
+		div.toolstrip-button:last-child {border-bottom-style: none;}
+		.delicious div.toolstrip-button:hover {
+			background-color: #3274d0;
+			color: #fff;
+			}
+	/*************************
+	OPTIONS pages
+	**************************/
+	.delicious .options h3 {
+		font-weight: bold;
+		margin-bottom: 9px;
+		}
+		.options small {font-size: 10px; font-family: verdana;}
+		.message p {padding: 4px;}
+			p.fail {
+				background-color: #ff0000;
+				color: #000;
+				}
+			p.success {
+				background-color: #ffff99;
+				color: #000;
+				}
+	.delicious #bookmarks {
+		padding: 6px;
+		}
+	.delicious #bookmarks h3 {
+		font-weight: normal;
+		font-size: 12px;
+		}
+	.delicious #bookmarks h3 small {
+		font-size: 10px;
+		text-decoration: underline;
+		}
+	.delicious #bookmarks ul {
+		margin: 0;
+		padding: 0;
+		list-style: none outside;
+		}
+	.delicious #bookmarks li {
+		margin: 0;
+		padding: 4px;
+		line-height: 14px;
+		list-style: none outside;
+		}
+	.delicious #bookmarks li.even {
+		background-color: #f1f1f1;
+		}
+	.delicious #bookmarks li a,
+	.delicious #bookmarks li a:link {
+		color: #1259c7;
+		text-decoration: none;
+		}
+	.delicious #bookmarks li a:visited {
+		color: #515697;
+		}
+	.delicious #bookmarks li a:hover,
+	.delicious #bookmarks li a:active,
+	.delicious #bookmarks li a:focus {
+		color: #1259c7;
+		text-decoration: underline;
+		}
+</STYLE><SCRIPT type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</SCRIPT><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<META charset="utf-8">
+	<META name="author" content="Jeremy Keith">
+	<TITLE>HTML 5 pocket book</TITLE>
+	<!-- Date: 2009-08-30 -->
+	<LINK rel="stylesheet" href="http://adactio.com/extras/pocketbooks/css/main.css">
+	<LINK rel="stylesheet" href="http://adactio.com/extras/pocketbooks/css/print.css" media="print">
+</HEAD><BODY><DIV style="position: fixed; top: 0px; left: 0px; height: 0px; width: 0px; z-index: 1e+007; "><DIV style="position: fixed; top: 100%; height: 0px; "><DIV style="position: relative; "></DIV></DIV></DIV>
+	
+	<DIV id="book">
+		<ARTICLE id="page1">
+			<DIV class="inner">
+				<HEADER><H1>HTML 5</H1></HEADER>
+				<CODE>&lt;!DOCTYPE html&gt;</CODE>
+				<DL>
+					<DT>Specification</DT>
+					<DD>whatwg.org/html5</DD>
+					<DT>Mailing lists</DT>
+					<DD>whatwg.org/mailing-list</DD>
+					<DT>IRC channel</DT>
+					<DD>irc://irc.freenode.org/whatwg</DD>
+				</DL>
+			</DIV>
+		</ARTICLE>
+		
+		<ARTICLE id="page2">
+			<DIV class="inner">
+				<HEADER><H2>Sectioning content</H2></HEADER>
+				<DL>
+					<DT><CODE>article</CODE></DT>
+					<DD>A composition that forms an independent part of a document, page, application, or site.</DD>
+					<DT><CODE>aside</CODE></DT>
+					<DD>Content that is tangentially related to the content around the aside element</DD>
+					<DT><CODE>nav</CODE></DT>
+					<DD>A section with navigation links.</DD>
+					<DT><CODE>section</CODE></DT>
+					<DD>A generic document or application section.</DD>
+				</DL>
+			</DIV>
+		</ARTICLE>
+		
+		<ARTICLE id="page3">
+			<DIV class="inner">
+				<HEADER><H2>Heading content</H2></HEADER>
+				<DL>
+					<DT>
+					<CODE>h1</CODE>,
+					<CODE>h2</CODE>,
+					<CODE>h3</CODE>,
+					<CODE>h4</CODE>,
+					<CODE>h5</CODE>,
+					<CODE>h6</CODE>
+					</DT>
+					<DT><CODE>hgroup</CODE></DT>
+					<DD>Used to group a set of h1–h6 elements when the heading has multiple levels, such as subheadings, alternative titles, or taglines.</DD>
+					<DD><PRE><CODE>&lt;hgroup&gt;
+  &lt;h3&gt;The Diamond Age&lt;/h3&gt;
+  &lt;h4&gt;or A Young Lady's
+Illustrated Primer&lt;/h4&gt;
+&lt;/hgroup&gt;</CODE></PRE></DD>
+				</DL>
+			</DIV>	
+		</ARTICLE>
+		
+		<ARTICLE id="page4">
+			<DIV class="inner">
+				<HEADER><H2>Flow content</H2></HEADER>
+				<DL>
+					<DT><CODE>header</CODE></DT>
+					<DD>A group of introductory or navigational aids.</DD>
+					<DT><CODE>footer</CODE></DT>
+					<DD>A footer for its nearest ancestor sectioning content. Typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.</DD>
+					<DT>figure</DT>
+					<DD>Content, optionally with a <CODE>figcaption</CODE>, that is self-contained and is typically referenced as a single unit from the main flow of the document.</DD>
+				</DL>
+			</DIV>
+		</ARTICLE>
+		
+		<ARTICLE id="page5">
+			<DIV class="inner">
+				<HEADER><H2>Interactive content</H2></HEADER>
+				<DL>
+					<DT><CODE>audio</CODE></DT>
+					<DD><PRE><CODE>&lt;audio src="audio.mp3"
+controls autobuffer
+autoplay loop&gt;
+&lt;/audio&gt;</CODE></PRE></DD>
+					<DT><CODE>video</CODE></DT>
+					<DD><PRE><CODE>&lt;video width=360 height=240
+controls poster="image.jpg"&gt;
+&lt;source src="movie.mp4"
+type="video/mp4"&gt;
+&lt;source src="movie.ogg"
+type="video/ogg"&gt;
+&lt;/video&gt;</CODE></PRE></DD>
+				</DL>
+				<P>Use either the <CODE>src</CODE> attribute or <CODE>source</CODE> elements.</P>
+			</DIV>	
+		</ARTICLE>
+		
+		<ARTICLE id="page6">
+			<DIV class="inner">
+				<HEADER><H2>Phrasing content</H2></HEADER>
+				<DL>
+					<DT><CODE>mark</CODE></DT>
+					<DD>A run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</DD>
+					<DT><CODE>time</CODE></DT>
+					<DD>A time on a 24 hour clock, or a precise date in the Gregorian calendar.</DD>
+					<DD><PRE><CODE>&lt;time datetime="2009-09-02"&gt;
+September 2nd, 2009
+&lt;/time&gt;</CODE></PRE></DD>
+					<DD>The Boolean attribute <CODE>pubdate</CODE> indicates the publication date of an <CODE>article</CODE>.</DD>
+				</DL>
+			</DIV>
+		</ARTICLE>
+
+		<ARTICLE id="page7">
+			<DIV class="inner">
+				<HEADER><H2><CODE>input type</CODE>s</H2></HEADER>
+				<CODE>search</CODE>, <CODE>tel</CODE>, <CODE>email</CODE>, <CODE>url</CODE>, <CODE>datetime</CODE>, <CODE>datetime-local</CODE>, <CODE>date</CODE>, <CODE>month</CODE>, <CODE>week</CODE>, <CODE>time</CODE>
+				<DL>
+					<DT><CODE>number</CODE></DT>
+					<DD>A text field or spinner control.</DD>
+					<DD><PRE><CODE>&lt;input type="number" min=0 max=10&gt;</CODE></PRE></DD>
+					<DT><CODE>range</CODE></DT>
+					<DD>A slider control.</DD>
+					<DD><PRE><CODE>&lt;input type="range" min=0 max=100&gt;</CODE></PRE></DD>
+					<DT><CODE>color</CODE></DT>
+					<DD>A colour well.</DD>
+					<DD><PRE><CODE>&lt;input type="color" value="#000000"&gt;</CODE></PRE></DD>
+				</DL>
+			</DIV>
+		</ARTICLE>
+		
+		<ARTICLE id="page8">
+			<DIV class="inner">
+				<HEADER><H2>Metadata content</H2></HEADER>
+				<H3><CODE>style</CODE></H3>
+				<P>The <CODE>type</CODE> attribute is optional.</P>
+				<P>The optional <CODE>scoped</CODE> attribute indicates that the styles are intended just for the subtree rooted at the style element's parent element, as opposed to the whole document.</P>
+				<H3><CODE>script</CODE></H3>
+				<P>The <CODE>type</CODE> attribute is optional.</P>
+				<H3>Character encoding</H3>
+				<CODE>&lt;meta charset="utf-8"&gt;</CODE>
+			</DIV>
+		</ARTICLE>
+	</DIV>
+
+
+
+<DIV id="snippy-tooltip-div" style="background-color: white; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(68, 68, 68); border-right-color: rgb(68, 68, 68); border-bottom-color: rgb(68, 68, 68); border-left-color: rgb(68, 68, 68); border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; border-bottom-right-radius: 5px 5px; border-bottom-left-radius: 5px 5px; -webkit-box-shadow: rgb(170, 170, 170) 5px 5px 5px; z-index: -20000; position: fixed; visibility: hidden; top: 5px; right: 5px; width: 150px; height: 150px; padding-top: 0.5em; padding-right: 0.5em; padding-bottom: 0.5em; padding-left: 0.5em; "><DIV style="font-size: 11px; font-family: sans-serif; color: black; text-align: left; "><B>Move</B> your mouse, and <B>click</B> on interesting elements to save them as snippets.</DIV><DIV style="background-image: url(chrome-extension://maabelkjnhafpphacjecmcnkkmjndjgl/img/grad.png); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; width: 120px; height: 22px; border-top-left-radius: 2px 2px; border-top-right-radius: 2px 2px; border-bottom-right-radius: 2px 2px; border-bottom-left-radius: 2px 2px; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(103, 140, 255); border-left-width: 1px; border-left-style: solid; border-left-color: rgb(103, 140, 255); text-align: center; padding-top: 0.3em; padding-right: 0.3em; padding-bottom: 0.3em; padding-left: 0.3em; margin-bottom: 0.5em; font-size: 14px; font-weight: bold; color: white; text-decoration: none; cursor: pointer; -webkit-box-shadow: rgb(170, 170, 170) 2px 2px 3px; background-position: 0% 0%; background-repeat: repeat no-repeat; "><IMG src="chrome-extension://maabelkjnhafpphacjecmcnkkmjndjgl/img/snipit.png" style="vertical-align: bottom-text; padding-right: 5px; display: inline"><SPAN>Done</SPAN></DIV><A href="http://adactio.com/extras/pocketbooks/html5/#" style="font-size: 11px; font-family: sans-serif; color: blue; font-weight: normal; text-align: left; ">Show current snippets</A></DIV><DIV id="snippy-initial" style="width: 0px; height: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; "><DIV id="snippy-overlay" style="background-color: blue; opacity: 0.1; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left-color: black; position: absolute; z-index: -10000; visibility: hidden; top: 0px; left: 0px; width: 100px; height: 100px; "></DIV></DIV><DIV id="csscan-wrapper" style="display: none; "><H2 id="csscan-header">element</H2><TABLE id="csscan-table"><TBODY><TR><TH colspan="2" id="csscan-header-font" class="csscan-header">Font</TH></TR><TR id="csscan-row-font-family"><TD id="csscan-property-font-family" class="csscan-property">font-family</TD><TD id="csscan-value-font-family" class="csscan-value"></TR><TR id="csscan-row-font-size"><TD id="csscan-property-font-size" class="csscan-property">font-size</TD><TD id="csscan-value-font-size" class="csscan-value"></TR><TR id="csscan-row-font-style"><TD id="csscan-property-font-style" class="csscan-property">font-style</TD><TD id="csscan-value-font-style" class="csscan-value"></TR><TR id="csscan-row-font-variant"><TD id="csscan-property-font-variant" class="csscan-property">font-variant</TD><TD id="csscan-value-font-variant" class="csscan-value"></TR><TR id="csscan-row-font-weight"><TD id="csscan-property-font-weight" class="csscan-property">font-weight</TD><TD id="csscan-value-font-weight" class="csscan-value"></TR><TR id="csscan-row-letter-spacing"><TD id="csscan-property-letter-spacing" class="csscan-property">letter-spacing</TD><TD id="csscan-value-letter-spacing" class="csscan-value"></TR><TR id="csscan-row-line-height"><TD id="csscan-property-line-height" class="csscan-property">line-height</TD><TD id="csscan-value-line-height" class="csscan-value"></TR><TR id="csscan-row-text-decoration"><TD id="csscan-property-text-decoration" class="csscan-property">text-decoration</TD><TD id="csscan-value-text-decoration" class="csscan-value"></TR><TR id="csscan-row-text-align"><TD id="csscan-property-text-align" class="csscan-property">text-align</TD><TD id="csscan-value-text-align" class="csscan-value"></TR><TR id="csscan-row-text-indent"><TD id="csscan-property-text-indent" class="csscan-property">text-indent</TD><TD id="csscan-value-text-indent" class="csscan-value"></TR><TR id="csscan-row-text-transform"><TD id="csscan-property-text-transform" class="csscan-property">text-transform</TD><TD id="csscan-value-text-transform" class="csscan-value"></TR><TR id="csscan-row-white-space"><TD id="csscan-property-white-space" class="csscan-property">white-space</TD><TD id="csscan-value-white-space" class="csscan-value"></TR><TR id="csscan-row-word-spacing"><TD id="csscan-property-word-spacing" class="csscan-property">word-spacing</TD><TD id="csscan-value-word-spacing" class="csscan-value"></TR><TR id="csscan-row-color"><TD id="csscan-property-color" class="csscan-property">color</TD><TD id="csscan-value-color" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-background" class="csscan-header">Background</TH></TR><TR id="csscan-row-background-attachment"><TD id="csscan-property-background-attachment" class="csscan-property">bg-attachment</TD><TD id="csscan-value-background-attachment" class="csscan-value"></TR><TR id="csscan-row-background-color"><TD id="csscan-property-background-color" class="csscan-property">bg-color</TD><TD id="csscan-value-background-color" class="csscan-value"></TR><TR id="csscan-row-background-image"><TD id="csscan-property-background-image" class="csscan-property">bg-image</TD><TD id="csscan-value-background-image" class="csscan-value"></TR><TR id="csscan-row-background-position"><TD id="csscan-property-background-position" class="csscan-property">bg-position</TD><TD id="csscan-value-background-position" class="csscan-value"></TR><TR id="csscan-row-background-repeat"><TD id="csscan-property-background-repeat" class="csscan-property">bg-repeat</TD><TD id="csscan-value-background-repeat" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-size" class="csscan-header">Box</TH></TR><TR id="csscan-row-width"><TD id="csscan-property-width" class="csscan-property">width</TD><TD id="csscan-value-width" class="csscan-value"></TR><TR id="csscan-row-height"><TD id="csscan-property-height" class="csscan-property">height</TD><TD id="csscan-value-height" class="csscan-value"></TR><TR id="csscan-row-border-top"><TD id="csscan-property-border-top" class="csscan-property">border-top</TD><TD id="csscan-value-border-top" class="csscan-value"></TR><TR id="csscan-row-border-right"><TD id="csscan-property-border-right" class="csscan-property">border-right</TD><TD id="csscan-value-border-right" class="csscan-value"></TR><TR id="csscan-row-border-bottom"><TD id="csscan-property-border-bottom" class="csscan-property">border-bottom</TD><TD id="csscan-value-border-bottom" class="csscan-value"></TR><TR id="csscan-row-border-left"><TD id="csscan-property-border-left" class="csscan-property">border-left</TD><TD id="csscan-value-border-left" class="csscan-value"></TR><TR id="csscan-row-margin"><TD id="csscan-property-margin" class="csscan-property">margin</TD><TD id="csscan-value-margin" class="csscan-value"></TR><TR id="csscan-row-padding"><TD id="csscan-property-padding" class="csscan-property">padding</TD><TD id="csscan-value-padding" class="csscan-value"></TR><TR id="csscan-row-max-height"><TD id="csscan-property-max-height" class="csscan-property">max-height</TD><TD id="csscan-value-max-height" class="csscan-value"></TR><TR id="csscan-row-min-height"><TD id="csscan-property-min-height" class="csscan-property">min-height</TD><TD id="csscan-value-min-height" class="csscan-value"></TR><TR id="csscan-row-max-width"><TD id="csscan-property-max-width" class="csscan-property">max-width</TD><TD id="csscan-value-max-width" class="csscan-value"></TR><TR id="csscan-row-min-width"><TD id="csscan-property-min-width" class="csscan-property">min-width</TD><TD id="csscan-value-min-width" class="csscan-value"></TR><TR id="csscan-row-outline-color"><TD id="csscan-property-outline-color" class="csscan-property">outline-color</TD><TD id="csscan-value-outline-color" class="csscan-value"></TR><TR id="csscan-row-outline-style"><TD id="csscan-property-outline-style" class="csscan-property">outline-style</TD><TD id="csscan-value-outline-style" class="csscan-value"></TR><TR id="csscan-row-outline-width"><TD id="csscan-property-outline-width" class="csscan-property">outline-width</TD><TD id="csscan-value-outline-width" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-position" class="csscan-header">Positioning</TH></TR><TR id="csscan-row-position"><TD id="csscan-property-position" class="csscan-property">position</TD><TD id="csscan-value-position" class="csscan-value"></TR><TR id="csscan-row-top"><TD id="csscan-property-top" class="csscan-property">top</TD><TD id="csscan-value-top" class="csscan-value"></TR><TR id="csscan-row-bottom"><TD id="csscan-property-bottom" class="csscan-property">bottom</TD><TD id="csscan-value-bottom" class="csscan-value"></TR><TR id="csscan-row-right"><TD id="csscan-property-right" class="csscan-property">right</TD><TD id="csscan-value-right" class="csscan-value"></TR><TR id="csscan-row-left"><TD id="csscan-property-left" class="csscan-property">left</TD><TD id="csscan-value-left" class="csscan-value"></TR><TR id="csscan-row-float"><TD id="csscan-property-float" class="csscan-property">float</TD><TD id="csscan-value-float" class="csscan-value"></TR><TR id="csscan-row-display"><TD id="csscan-property-display" class="csscan-property">display</TD><TD id="csscan-value-display" class="csscan-value"></TR><TR id="csscan-row-clear"><TD id="csscan-property-clear" class="csscan-property">clear</TD><TD id="csscan-value-clear" class="csscan-value"></TR><TR id="csscan-row-z-index"><TD id="csscan-property-z-index" class="csscan-property">z-index</TD><TD id="csscan-value-z-index" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-list" class="csscan-header">List</TH></TR><TR id="csscan-row-list-style-image"><TD id="csscan-property-list-style-image" class="csscan-property">list-style-image</TD><TD id="csscan-value-list-style-image" class="csscan-value"></TR><TR id="csscan-row-list-style-type"><TD id="csscan-property-list-style-type" class="csscan-property">list-style-type</TD><TD id="csscan-value-list-style-type" class="csscan-value"></TR><TR id="csscan-row-list-style-position"><TD id="csscan-property-list-style-position" class="csscan-property">list-style-position</TD><TD id="csscan-value-list-style-position" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-table" class="csscan-header">Table</TH></TR><TR id="csscan-row-vertical-align"><TD id="csscan-property-vertical-align" class="csscan-property">vertical-align</TD><TD id="csscan-value-vertical-align" class="csscan-value"></TR><TR id="csscan-row-border-collapse"><TD id="csscan-property-border-collapse" class="csscan-property">border-collapse</TD><TD id="csscan-value-border-collapse" class="csscan-value"></TR><TR id="csscan-row-border-spacing"><TD id="csscan-property-border-spacing" class="csscan-property">border-spacing</TD><TD id="csscan-value-border-spacing" class="csscan-value"></TR><TR id="csscan-row-caption-side"><TD id="csscan-property-caption-side" class="csscan-property">caption-side</TD><TD id="csscan-value-caption-side" class="csscan-value"></TR><TR id="csscan-row-empty-cells"><TD id="csscan-property-empty-cells" class="csscan-property">empty-cells</TD><TD id="csscan-value-empty-cells" class="csscan-value"></TR><TR id="csscan-row-table-layout"><TD id="csscan-property-table-layout" class="csscan-property">table-layout</TD><TD id="csscan-value-table-layout" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-effects" class="csscan-header">Effects</TH></TR><TR id="csscan-row-text-shadow"><TD id="csscan-property-text-shadow" class="csscan-property">text-shadow</TD><TD id="csscan-value-text-shadow" class="csscan-value"></TR><TR id="csscan-row--webkit-box-shadow"><TD id="csscan-property--webkit-box-shadow" class="csscan-property">-webkit-box-shadow</TD><TD id="csscan-value--webkit-box-shadow" class="csscan-value"></TR><TR id="csscan-row-border-radius"><TD id="csscan-property-border-radius" class="csscan-property">border-radius</TD><TD id="csscan-value-border-radius" class="csscan-value"></TR><TR><TH colspan="2" id="csscan-header-other" class="csscan-header">Other</TH></TR><TR id="csscan-row-overflow"><TD id="csscan-property-overflow" class="csscan-property">overflow</TD><TD id="csscan-value-overflow" class="csscan-value"></TR><TR id="csscan-row-cursor"><TD id="csscan-property-cursor" class="csscan-property">cursor</TD><TD id="csscan-value-cursor" class="csscan-value"></TR><TR id="csscan-row-visibility"><TD id="csscan-property-visibility" class="csscan-property">visibility</TD><TD id="csscan-value-visibility" class="csscan-value"></TR></TBODY></TABLE></DIV></BODY></HTML>
