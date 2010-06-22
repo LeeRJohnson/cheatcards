@@ -89,7 +89,6 @@ body {
 pre, code, kbd, tt, samp, tt {
 	font-family: "andale mono", monospace;
 }
-
 /* @end */
 
 /* @group Font sizes & margins */
@@ -238,6 +237,7 @@ pre {
 	border-top: 3px double #C7C7C7;
 	border-bottom: 3px double #C7C7C7;
 	padding: 0.5em 0;
+	letter-spacing: -1px;
 }
 
 hr {
@@ -421,7 +421,8 @@ button.link {
 	margin: 10px;
 	overflow: hidden;
 }
-.page {
+article {
+	display: block;
 	width: 241px;
 	height: 370px;
 	overflow: hidden;
