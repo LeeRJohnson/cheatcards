@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Jeremy Keith">
+	<title>HTML 5 pocket book</title>
+	<!-- Date: 2009-08-30 -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+	
+	<div id="book">
+		<article id="page1">
+			<div class="inner">
+				<header><h1>GoogleCL</h1>
+				<code>google <var>service</var> TASK [options]</code>
+				</header>
+				<dl>
+					<dt>Services</dt>
+						<dd>picasa</dd>
+
+						<dd>blogger</dd>
+
+						<dd>youtube</dd>
+
+						<dd>docs</dd>
+
+						<dd>contacts</dd>
+
+						<dd>calendar</dd>
+
+				</dl>
+				<p>This program provides command-line access to (some) google services via their gdata APIs.
+Called without a service name, it starts an interactive session.
+</p>
+</div></article>
+<article id="page2">
+<div class="inner"><h2>picasa</h2>
+<dl><dt>get</dt><dd>Download photos  Requires: none Optional: title, query Arguments: LOCATION
+</dd>
+<dt>create</dt><dd>Create an album  Requires: title Optional: date, summary, tags Arguments: PATH_TO_PHOTOS
+</dd>
+<dt>list</dt><dd>List photos  Requires: delimiter Optional: title, query
+</dd>
+<dt>list-albums</dt><dd>List albums  Requires: delimiter Optional: title
+</dd>
+<dt>tag</dt><dd>Tag photos  Requires: tags AND (title OR query)
+</dd>
+<dt>post</dt><dd>Post photos to an album  Requires: title Optional: tags Arguments: PATH_TO_PHOTOS
+</dd>
+<dt>delete</dt><dd>Delete photos or albums  Requires: (title OR query)
+
+
+</div></article>
+<article id="page3">
+<div class="inner"><h2>blogger</h2>
+<dl><dt>post</dt><dd>Post content.  Requires: none Optional: blog, title, tags Arguments: PATH_TO_CONTENT or CONTENT
+</dd>
+<dt>tag</dt><dd>Label posts  Requires: tags AND title Optional: blog
+</dd>
+<dt>list</dt><dd>List posts in your blog  Requires: delimiter Optional: blog, title
+</dd>
+<dt>delete</dt><dd>Delete a post.  Requires: title Optional: blog
+
+
+</div></article>
+<article id="page4">
+<div class="inner"><h2>youtube</h2>
+<dl><dt>post</dt><dd>Post a video.  Requires: category AND devkey Optional: title, summary, tags Arguments: PATH_TO_VIDEO
+</dd>
+<dt>tag</dt><dd>Add tags to a video and/or change its category.  Requires: devkey AND title AND (category OR tags)
+</dd>
+<dt>list</dt><dd>List videos by user.  Requires: delimiter Optional: title
+</dd>
+<dt>delete</dt><dd>Delete videos.  Requires: devkey Optional: title
+
+
+</div></article>
+<article id="page5">
+<div class="inner"><h2>docs</h2>
+<dl><dt>edit</dt><dd>Edit a document  Requires: title Optional: format, editor
+</dd>
+<dt>delete</dt><dd>Delete documents  Requires: none Optional: title
+</dd>
+<dt>list</dt><dd>List documents  Requires: delimiter Optional: title, folder
+</dd>
+<dt>upload</dt><dd>Upload a document  Requires: none Optional: title, folder, no-convert Arguments: PATH_TO_FILE
+</dd>
+<dt>get</dt><dd>Download a document  Requires: (title OR folder) Arguments: LOCATION
+
+
+</div></article>
+<article id="page6">
+<div class="inner"><h2>contacts</h2>
+<dl><dt>list</dt><dd>List contacts  Requires: none Arguments: Fields to show (example: name,email)
+</dd>
+<dt>list-groups</dt><dd>List contact groups  Requires: none Arguments: Specific groups to list (if any)
+</dd>
+<dt>add</dt><dd>Add contacts  Requires: none Arguments: "name,email" pair or CSV filename
+</dd>
+<dt>add-groups</dt><dd>Add contact group(s)  Requires: none Arguments: Group name(s)
+</dd>
+<dt>delete-groups</dt><dd>Delete contact group(s)  Requires: none Arguments: Group name(s)
+</dd>
+<dt>delete</dt><dd>Delete contacts  Requires: none Arguments: names of contact(s) to delete (example: "John Doe" "Jane Doe")
+
+
+</div></article>
+<article id="page7">
+<div class="inner"><h2>calendar</h2>
+<dl><dt>add</dt><dd>Add event to a calendar  Requires: none Optional: cal Arguments: QUICK_ADD_TEXT
+</dd>
+<dt>list</dt><dd>List events on a calendar  Requires: delimiter Optional: title, query, date, cal
+</dd>
+<dt>today</dt><dd>List events for the next 24 hours  Requires: delimiter Optional: title, query, cal
+</dd>
+<dt>delete</dt><dd>Delete event from a calendar  Requires: (title OR query) Optional: date, cal
+</div></article>
+
+
+<article id="page8">
+<div class="inner"><h2>
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  --blog=BLOG           Blogger only - specify a blog other than your primary.
+  --cal=CAL             Calendar only - specify a calendar other than your
+                        primary.
+  -c CATEGORY, --category=CATEGORY
+                        YouTube only - specify video categories as a comma-
+                        separated list, e.g. "Film, Travel"
+  --config=CONFIG       Specify location of config file.
+  --devtags=DEVTAGS     YouTube only - specify developer tags as a comma-
+                        separated list.
+  --devkey=DEVKEY       YouTube only - specify a developer key
+  -d DATE, --date=DATE  Date in YYYY-MM-DD format. Picasa only - sets the date
+                        of the album  Calendar only - date of the event to add
+                        / look for.  Can also specify a range with a comma:
+                        "YYYY-MM-DD", events between date and future. "YYYY-
+                        MM-DD,YYYY-MM-DD" events between two dates.
+  --delimiter=DELIMITER
+                        Specify a delimiter for the output of the list task.
+  --draft               Blogger only - post as a draft
+  --editor=EDITOR       Docs only - editor to use on a file.
+  -f FOLDER, --folder=FOLDER
+                        Docs only - specify folder(s) to upload to / search
+                        in.
+  --format=FORMAT       Docs only - format to download documents as.
+  -n TITLE, --title=TITLE
+                        Title of the item
+  --no-convert          Google Apps Premier only - do not convert the file on
+                        upload. (Else converts to native Google Docs format)
+  -q QUERY, --query=QUERY
+                        Full text query string for specifying items. Searches
+                        on titles, captions, and tags.
+  -s SUMMARY, --summary=SUMMARY
+                        Description of the upload, or file containing the
+                        description.
+  -t TAGS, --tags=TAGS  Tags for item, e.g. "Sunsets, Earth Day"
+  -u USER, --user=USER  Username to use for the task. Exact application is
+                        task-dependent. If authentication is necessary, this
+                        will force the user to specify a password through a
+                        command line prompt or option.
+			</div>
+		</article>
+	</div>
+
+</body>
+</html>
