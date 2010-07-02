@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Jeremy Keith">
+	<meta name="author" content="Lee R Johnson">
 	<title>HTML 5 pocket book</title>
 	<!-- Date: 2009-08-30 -->
 	<link rel="stylesheet" href="css/main.css">
@@ -11,7 +11,7 @@
 <body>
 	
 	<div id="book">
-		<article id="page1">
+		<article id="page-1">
 			<div class="inner">
 				<header><h1>GoogleCL</h1>
 				<code>google <var>service</var> TASK [options]</code>
@@ -35,14 +35,20 @@
 Called without a service name, it starts an interactive session.
 </p>
 </div></article>
-<article id="page2">
-<div class="inner"><h2>picasa</h2>
+<article id="page-2">
+<div class="inner"><h2>Picasa Web</h2>
+	<kbd class="cmd-line">google <strong>picasa</strong> <var class="req">task</var> <var class="optional">options</var></kbd>
 <dl><dt>get</dt><dd>Download photos  Requires: none Optional: title, query Arguments: LOCATION
 </dd>
 <dt>create</dt><dd>Create an album  Requires: title Optional: date, summary, tags Arguments: PATH_TO_PHOTOS
 </dd>
 <dt>list</dt><dd>List photos  Requires: delimiter Optional: title, query
 </dd>
+
+</div></article>
+<article id="page-2-b">
+<div class="inner"><h2>Picasa Web</h2>
+<p><em>continued</em></p>	
 <dt>list-albums</dt><dd>List albums  Requires: delimiter Optional: title
 </dd>
 <dt>tag</dt><dd>Tag photos  Requires: tags AND (title OR query)
@@ -53,8 +59,9 @@ Called without a service name, it starts an interactive session.
 
 
 </div></article>
-<article id="page3">
-<div class="inner"><h2>blogger</h2>
+<article id="page-3">
+<div class="inner"><h2>Blogger</h2>
+	<kbd class="cmd-line">google <strong>blogger<strong> <var class="req">task</var> <var class="optional">options</var></kbd>
 <dl><dt>post</dt><dd>Post content.  Requires: none Optional: blog, title, tags Arguments: PATH_TO_CONTENT or CONTENT
 </dd>
 <dt>tag</dt><dd>Label posts  Requires: tags AND title Optional: blog
@@ -65,8 +72,9 @@ Called without a service name, it starts an interactive session.
 
 
 </div></article>
-<article id="page4">
-<div class="inner"><h2>youtube</h2>
+<article id="page-4">
+<div class="inner"><h2>YouTube</h2>
+	<kbd class="cmd-line">google <strong>youtube<strong> <var class="req">task</var> <var class="optional">options</var></kbd>
 <dl><dt>post</dt><dd>Post a video.  Requires: category AND devkey Optional: title, summary, tags Arguments: PATH_TO_VIDEO
 </dd>
 <dt>tag</dt><dd>Add tags to a video and/or change its category.  Requires: devkey AND title AND (category OR tags)
@@ -77,8 +85,9 @@ Called without a service name, it starts an interactive session.
 
 
 </div></article>
-<article id="page5">
-<div class="inner"><h2>docs</h2>
+<article id="page-5">
+<div class="inner"><h2>Docs</h2>
+	<kbd class="cmd-line">google <strong>docs<strong> <var class="req">task</var> <var class="optional">options</var></kbd>
 <dl><dt>edit</dt><dd>Edit a document  Requires: title Optional: format, editor
 </dd>
 <dt>delete</dt><dd>Delete documents  Requires: none Optional: title
@@ -91,8 +100,9 @@ Called without a service name, it starts an interactive session.
 
 
 </div></article>
-<article id="page6">
-<div class="inner"><h2>contacts</h2>
+<article id="page-6">
+<div class="inner"><h2>Contacts</h2>
+	<kbd class="cmd-line">google <strong>contacts<strong> <var class="req">task</var> <var class="optional">options</var></kbd>
 <dl><dt>list</dt><dd>List contacts  Requires: none Arguments: Fields to show (example: name,email)
 </dd>
 <dt>list-groups</dt><dd>List contact groups  Requires: none Arguments: Specific groups to list (if any)
@@ -107,8 +117,9 @@ Called without a service name, it starts an interactive session.
 
 
 </div></article>
-<article id="page7">
+<article id="page-7">
 <div class="inner"><h2>calendar</h2>
+	<kbd class="cmd-line">google <strong>calendar</strong> <var class="req">task</var> <var class="optional">options</var></kbd>
 <dl><dt>add</dt><dd>Add event to a calendar  Requires: none Optional: cal Arguments: QUICK_ADD_TEXT
 </dd>
 <dt>list</dt><dd>List events on a calendar  Requires: delimiter Optional: title, query, date, cal
@@ -119,49 +130,41 @@ Called without a service name, it starts an interactive session.
 </div></article>
 
 
-<article id="page8">
+<article id="page-8">
 <div class="inner"><h2>
-Options:
-  --version             show program's version number and exit
-  -h, --help            show this help message and exit
-  --blog=BLOG           Blogger only - specify a blog other than your primary.
-  --cal=CAL             Calendar only - specify a calendar other than your
-                        primary.
-  -c CATEGORY, --category=CATEGORY
-                        YouTube only - specify video categories as a comma-
+Options</h2>
+<dl>
+<dt>--version       </dt><dd>show program's version number and exit</dd>
+<dt>-h, --help      </dt><dd>show this help message and exit</dd>
+<dt>--blog=BLOG     </dt><dd>Blogger only - specify a blog other than your primary.</dd>
+<dt>--cal=CAL       </dt><dd>                  primary.</dd>
+<dt>--config=CONFIG </dt><dd>                  YouTube only - specify video categories as a comma-</dd>
                         separated list, e.g. "Film, Travel"
-  --config=CONFIG       Specify location of config file.
-  --devtags=DEVTAGS     YouTube only - specify developer tags as a comma-
-                        separated list.
-  --devkey=DEVKEY       YouTube only - specify a developer key
-  -d DATE, --date=DATE  Date in YYYY-MM-DD format. Picasa only - sets the date
-                        of the album  Calendar only - date of the event to add
+<dt>--config=CONFIG </dt><dd>Specify location of config file.</dd>
+<dt>--devkey=DEVKEY </dt><dd>                  separated list.</dd>
+<dt>--devkey=DEVKEY </dt><dd>YouTube only - specify a developer key</dd>
+<dt>--draft         </dt><dd>                  of the album  Calendar only - date of the event to add</dd>
                         / look for.  Can also specify a range with a comma:
                         "YYYY-MM-DD", events between date and future. "YYYY-
                         MM-DD,YYYY-MM-DD" events between two dates.
-  --delimiter=DELIMITER
-                        Specify a delimiter for the output of the list task.
-  --draft               Blogger only - post as a draft
-  --editor=EDITOR       Docs only - editor to use on a file.
-  -f FOLDER, --folder=FOLDER
-                        Docs only - specify folder(s) to upload to / search
-                        in.
-  --format=FORMAT       Docs only - format to download documents as.
-  -n TITLE, --title=TITLE
-                        Title of the item
-  --no-convert          Google Apps Premier only - do not convert the file on
-                        upload. (Else converts to native Google Docs format)
-  -q QUERY, --query=QUERY
+<dt>--draft         </dt><dd>                  Specify a delimiter for the output of the list task.</dd>
+<dt>--draft         </dt><dd>Blogger only - post as a draft</dd>
+<dt>--editor=EDITOR </dt><dd>Docs only - editor to use on a file.</dd>
+<dt>--format=FORMAT </dt><dd>                  Docs only - specify folder(s) to upload to / search in.</dd>
+                        
+<dt>--format=FORMAT </dt><dd>Docs only - format to download documents as.</dd>
+<dt>--no-convert    </dt><dd>Title of the item upload. (Else converts to native Google Docs format)</dd>
+<dt>-q QUERY, --query=QUERY</dt><dd>
                         Full text query string for specifying items. Searches
-                        on titles, captions, and tags.
-  -s SUMMARY, --summary=SUMMARY
+                        on titles, captions, and tags.</dd>
+<dt>-s SUMMARY, --summary=SUMMARY</dt><dd>
                         Description of the upload, or file containing the
-                        description.
-  -t TAGS, --tags=TAGS  Tags for item, e.g. "Sunsets, Earth Day"
-  -u USER, --user=USER  Username to use for the task. Exact application is
+                        description.</dd>
+<dt>-t TAGS, --tags=TAGS</dt><dd>Tags for item, e.g. "Sunsets, Earth Day"</dd>
+<dt>-u USER, --user=USER</dt><dd>Username to use for the task. Exact application is
                         task-dependent. If authentication is necessary, this
                         will force the user to specify a password through a
-                        command line prompt or option.
+                        command line prompt or option.</dd>
 			</div>
 		</article>
 	</div>

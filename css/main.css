@@ -57,23 +57,29 @@ table {
 
 body {
 	background: #fff;
-	color:#000;    font-size:14px;    line-height:1.2em; }
+	color:#000;
+    font-size:12px;
+    line-height:1.5em; 
+}
 
 a:link, 
 button.link span {
 	color: #0063DC;
 	text-decoration: underline;
-}a:visited {
+}
+a:visited {
 	color: #1057ae;
 	text-decoration: underline;
-}a:hover, 
+}
+a:hover, 
 a:focus,
 button.link:hover,
 button.link:focus span {
 	color: #FFFFFF; 
 	text-decoration: none;
 	background-color: #0063DC;
-}a:active, 
+}
+a:active, 
 button.link:active span {
 	color: #FFFFFF; 
 	text-decoration: none; 
@@ -104,30 +110,9 @@ p, ul, ol, dl, address, table, pre, form, fieldset {
 
 /* @group Headings */
 
-h1 {
-	font-size: 2.571em /* 36px */;
-	line-height:1em /* 36px */;
-	margin-top:0.1667em /* 6px */;
-	margin-bottom:0.5833em /* 21px */;
-}
-h1 span {
-	font-size: 0.5em;
-	line-height: 1;
-	color: #999;
-	display: block;
-	margin-bottom: 0.3em;
-}
-h2, h3 {
-	font-size:1.143em /* 16px */;
-	margin-top:0;
-	padding-bottom: 0.5em;
-	margin-bottom:0.5em /* 8px */; 
-	text-align: center;
-	border-bottom: 1px solid #999;
-}
-h4 {
-	margin-top:1em /* 21px */;
-	font-size:1em /* 14px */;
+h1, h2, h3, h4 {
+	margin-top:.2em /* 21px */;
+	font-size:1.3em /* 14px */;
 	margin-bottom: 0.5em;
 }
 h5, h6 {
@@ -152,7 +137,8 @@ ol {
 
 dt {
 	font-weight: bold;
-	margin-top: 1.5em; /* 21px */
+	font-size: 1em;
+	margin-top: 1em; /* 21px */
 }
 
 ul ul, ol ol, ol ul, ul ol {
